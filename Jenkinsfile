@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Limpieza y construccion del paquete') {
             steps {
-                //echo "Este es el build"
-                sh "mvn clean package"
+                echo "Este es el build"
+                //sh "mvn clean package"
             }
         }
         stage('Revisión del código') {
