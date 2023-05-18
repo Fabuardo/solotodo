@@ -18,12 +18,12 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv(credentialsId: 'sonar', installationName: 'SonarQube') {
-                    sh """$SCANNER_HOME/bin/sonar-scanner \\
-                    -Dsonar.projectKey=l3 \\
-                    -Dsonar.projectName=M3LEccion3 \\
-                    -Dsonar.sources=./ \\
+                    sh """$SCANNER_HOME/bin/sonar-scanner \
+                    -Dsonar.projectKey=l3 \
+                    -Dsonar.projectName='M3LEccion3' \
+                    -Dsonar.host.url=http://192.168.1.86:9000 \
+                    -Dsonar.sources=./ \
                     -Dsonar.java.binaries=target/classes/ """
-                    
                 }
             }
         }
